@@ -1,2 +1,2 @@
 # Blog
-Simple Blog with Microservices Architecture
+Simple Book Blog with Microservices Architecture
