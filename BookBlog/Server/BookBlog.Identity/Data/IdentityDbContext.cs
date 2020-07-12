@@ -3,7 +3,6 @@ using BookBlog.Identity.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace BookBlog.Identity.Data
 {
         public class IdentityDbContext : IdentityDbContext<User>

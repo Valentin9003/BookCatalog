@@ -1,10 +1,6 @@
 ﻿using BookBlog.Identity.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Web.Providers.Entities;
 
 namespace BookBlog.Identity.Infrastructure
