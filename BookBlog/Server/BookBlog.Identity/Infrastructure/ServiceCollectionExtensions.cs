@@ -1,0 +1,29 @@
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Web.Providers.Entities;
+
+namespace BookBlog.Identity.Infrastructure
+{
+    public class ServiceCollectionExtensions
+    {
+        public static IServiceCollection AddUserStorage(
+           this IServiceCollection services)
+        {
+            services
+                .AddIdentity<User, IdentityRole>(options =>
+                {
+                    options.Password.RequiredLength = 6;
+                    options.Password.RequireDigit = false;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                })
+                    .AddEntityFrameworkStores<IdentityDbContext>();
+
+            return services;
+        }
+    }
+}
