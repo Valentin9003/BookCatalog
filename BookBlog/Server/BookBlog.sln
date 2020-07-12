@@ -5,15 +5,17 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Identity", "BookBlog.Identity\BookBlog.Identity.csproj", "{3749C2E3-8A25-4588-B038-BB40E7F55EC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookBlog.Admin", "BookBlog.Admin\BookBlog.Admin.csproj", "{BDD661E8-BDC8-4240-A6BF-070DBD19E67B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Admin", "BookBlog.Admin\BookBlog.Admin.csproj", "{BDD661E8-BDC8-4240-A6BF-070DBD19E67B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookBlog.Categories", "BookBlog.Categories\BookBlog.Categories.csproj", "{FE26D8CE-7EC6-4B53-BEA6-196AFFAECF9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Categories", "BookBlog.Categories\BookBlog.Categories.csproj", "{FE26D8CE-7EC6-4B53-BEA6-196AFFAECF9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookBlog.Authors", "BookBlog.Authors\BookBlog.Authors.csproj", "{A30BF41E-E606-48DC-ADBB-46AB1DF5A204}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Authors", "BookBlog.Authors\BookBlog.Authors.csproj", "{A30BF41E-E606-48DC-ADBB-46AB1DF5A204}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookBlog.Common", "BookBlog.Common\BookBlog.Common.csproj", "{50CC94C6-2E53-4CBA-A26B-A2DE2F19A8BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Common", "BookBlog.Common\BookBlog.Common.csproj", "{50CC94C6-2E53-4CBA-A26B-A2DE2F19A8BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookBlog.Gateway", "BookBlog.Gateway\BookBlog.Gateway.csproj", "{A78B9CC2-0721-4BAF-9355-3E432E5DE3D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Gateway", "BookBlog.Gateway\BookBlog.Gateway.csproj", "{A78B9CC2-0721-4BAF-9355-3E432E5DE3D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookBlog.Author", "BookBlog.Author\BookBlog.Author.csproj", "{701F7D70-C369-47F7-800A-7FBEBDA0B24D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{A78B9CC2-0721-4BAF-9355-3E432E5DE3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A78B9CC2-0721-4BAF-9355-3E432E5DE3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A78B9CC2-0721-4BAF-9355-3E432E5DE3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{701F7D70-C369-47F7-800A-7FBEBDA0B24D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{701F7D70-C369-47F7-800A-7FBEBDA0B24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{701F7D70-C369-47F7-800A-7FBEBDA0B24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{701F7D70-C369-47F7-800A-7FBEBDA0B24D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
