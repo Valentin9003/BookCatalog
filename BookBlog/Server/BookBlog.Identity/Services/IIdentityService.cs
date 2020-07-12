@@ -1,7 +1,7 @@
 ﻿using BookBlog.Common.Services;
+using BookBlog.Identity.Data.Models;
 using BookBlog.Identity.Models;
 using System.Threading.Tasks;
-using System.Web.Providers.Entities;
 
 namespace BookBlog.Identity.Services
 {

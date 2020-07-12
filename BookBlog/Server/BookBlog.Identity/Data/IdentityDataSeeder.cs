@@ -1,12 +1,13 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
 using BookBlog.Common;
+using BookBlog.Common.Services;
 using BookBlog.Identity.Data.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace BookBlog.Identity.Data
 {
-    public class IdentityDataSeeder
+    public class IdentityDataSeeder: IDataSeeder
     {
         private readonly UserManager<User> userManager;
         private readonly RoleManager<IdentityRole> roleManager;

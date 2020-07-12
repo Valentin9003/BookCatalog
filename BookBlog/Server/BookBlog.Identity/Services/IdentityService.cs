@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookBlog.Identity.Services
 {
-    public class IdentityService
+    public class IdentityService : IIdentityService
     {
         private const string InvalidErrorMessage = "Invalid credentials.";
 

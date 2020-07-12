@@ -1,14 +1,14 @@
-﻿using BookBlog.Identity.Models;
+﻿using BookBlog.Common.Controllers;
+using BookBlog.Common.Services;
+using BookBlog.Identity.Models;
+using BookBlog.Identity.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace BookBlog.Identity.Controllers
 {
-    public class IdentityController
+    public class IdentityController : ApiController
     {
         private readonly IIdentityService identity;
         private readonly ICurrentUserService currentUser;
@@ -59,5 +59,4 @@ namespace BookBlog.Identity.Controllers
                 NewPassword = input.NewPassword
             });
     }
-}
 }
