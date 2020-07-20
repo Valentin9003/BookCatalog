@@ -7,15 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Identity", "BookBl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Admin", "BookBlog.Admin\BookBlog.Admin.csproj", "{BDD661E8-BDC8-4240-A6BF-070DBD19E67B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Categories", "BookBlog.Categories\BookBlog.Categories.csproj", "{FE26D8CE-7EC6-4B53-BEA6-196AFFAECF9A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Authors", "BookBlog.Authors\BookBlog.Authors.csproj", "{A30BF41E-E606-48DC-ADBB-46AB1DF5A204}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Books", "BookBlog.Categories\BookBlog.Books.csproj", "{FE26D8CE-7EC6-4B53-BEA6-196AFFAECF9A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Common", "BookBlog.Common\BookBlog.Common.csproj", "{50CC94C6-2E53-4CBA-A26B-A2DE2F19A8BF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Gateway", "BookBlog.Gateway\BookBlog.Gateway.csproj", "{A78B9CC2-0721-4BAF-9355-3E432E5DE3D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookBlog.Author", "BookBlog.Author\BookBlog.Author.csproj", "{701F7D70-C369-47F7-800A-7FBEBDA0B24D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlog.Authors", "BookBlog.Author\BookBlog.Authors.csproj", "{701F7D70-C369-47F7-800A-7FBEBDA0B24D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookBlog.Notifications", "BookBlog.Notifications\BookBlog.Notifications.csproj", "{D4F9941A-6597-4919-85B0-119DE1EC3579}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		{FE26D8CE-7EC6-4B53-BEA6-196AFFAECF9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE26D8CE-7EC6-4B53-BEA6-196AFFAECF9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE26D8CE-7EC6-4B53-BEA6-196AFFAECF9A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A30BF41E-E606-48DC-ADBB-46AB1DF5A204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A30BF41E-E606-48DC-ADBB-46AB1DF5A204}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A30BF41E-E606-48DC-ADBB-46AB1DF5A204}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A30BF41E-E606-48DC-ADBB-46AB1DF5A204}.Release|Any CPU.Build.0 = Release|Any CPU
 		{50CC94C6-2E53-4CBA-A26B-A2DE2F19A8BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{50CC94C6-2E53-4CBA-A26B-A2DE2F19A8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50CC94C6-2E53-4CBA-A26B-A2DE2F19A8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{701F7D70-C369-47F7-800A-7FBEBDA0B24D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{701F7D70-C369-47F7-800A-7FBEBDA0B24D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{701F7D70-C369-47F7-800A-7FBEBDA0B24D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4F9941A-6597-4919-85B0-119DE1EC3579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4F9941A-6597-4919-85B0-119DE1EC3579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4F9941A-6597-4919-85B0-119DE1EC3579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4F9941A-6597-4919-85B0-119DE1EC3579}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
