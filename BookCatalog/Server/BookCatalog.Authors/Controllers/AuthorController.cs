@@ -19,24 +19,54 @@ namespace BookCatalog.Authors.Controllers
             this.authorService = authorService;
             this.currentUser = currentUser;
         }
-        public async Task<ActionResult<AuthorOutputModel>> GetAuthor()
+        [HttpGet]
+        [Route("GetAuthor/{id}")]
+        public async Task<ActionResult<AuthorOutputModel>> GetAuthor(string id)
         {
-            return null;
+            var author = await authorService.GetAuthor(id);
+
+            if (author == null)
+            {
+                return NotFound();
+            }
+
+            return author;
         }
 
-        public async Task<ActionResult<AuthorOutputModel>> AddAuthor()
+        public async Task<ActionResult<AuthorOutputModel>> AddAuthor(AuthorInputModel author)
         {
-            return null;
+            var isSuccessed = await this.authorService.AddAuthor(author);
+
+            if (!isSuccessed)
+            {
+                return BadRequest();
+            }
+
+            return Ok();
         }
 
-        public async Task<ActionResult<AuthorOutputModel>> UpdateAuthor()
+        public async Task<ActionResult<AuthorOutputModel>> UpdateAuthor(AuthorInputModel author)
         {
-            return null;
+            var isSuccessed = await this.authorService.UpdateAuthor(author);
+
+            if (!isSuccessed)
+            {
+                return NotFound();
+            }
+
+            return Ok();
         }
 
-        public async Task<ActionResult<bool>> DeleteAuthor()
+        public async Task<ActionResult<bool>> DeleteAuthor(string authorId)
         {
-            return null;
+            var isSuccessed = await this.authorService.DeleteAuthor(authorId);
+
+            if (!isSuccessed)
+            {
+                return NotFound();
+            }
+
+            return Ok();
         }
     }
 }

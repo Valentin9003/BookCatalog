@@ -1,12 +1,29 @@
-﻿using BookCatalog.Common.Controllers;
+﻿using BookCatalog.Admin.Services.Books;
+using BookCatalog.Admin.Services.Books.Models;
+using BookCatalog.Common.Controllers;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace BookCatalog.Admin.Controllers
 {
     public class BooksController : ApiController
     {
-        public BooksController()
+        private readonly IBookService bookService;
+        public BooksController(IBookService bookService)
         {
+            this.bookService = bookService;
+        }
 
+        [HttpDelete("DeleteBook/{id}")]
+        async Task<ActionResult<bool>> DeleteBook(string id)
+        {
+            return await this.bookService.DeleteBook(id);
+        }
+
+        [HttpPut("EditBook/{id}")]
+        async Task<ActionResult<BookModel>> EditBook(string id, BookModel bookModel)
+        {
+            return await this.bookService.EditBook(id, bookModel);
         }
     }
 }

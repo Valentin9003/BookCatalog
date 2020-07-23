@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BookCatalog.Authors.Data;
 using BookCatalog.Common.Infrastructure;
+using BookCatalog.Statistics.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +26,8 @@ namespace BookBlog.Authors
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services) =>
-            services.AddWebService<AuthorDbContext>(this.Configuration);
+            services.AddWebService<AuthorDbContext>(this.Configuration)
+            .AddServices();
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) =>
             app.UseWebService(env)

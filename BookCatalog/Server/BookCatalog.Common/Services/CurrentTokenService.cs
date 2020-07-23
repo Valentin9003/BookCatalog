@@ -1,6 +1,6 @@
 ﻿namespace BookCatalog.Common.Services
 {
-    public class CurrentTokenService
+    public class CurrentTokenService : ICurrentTokenService
     {
         private string currentToken;
 

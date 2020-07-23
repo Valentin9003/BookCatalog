@@ -1,5 +1,7 @@
-﻿using BookCatalog.Identity.Data;
+﻿using BookCatalog.Common.Services;
+using BookCatalog.Identity.Data;
 using BookCatalog.Identity.Data.Models;
+using BookCatalog.Identity.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -24,5 +26,10 @@ namespace BookCatalog.Identity.Infrastructure
 
             return services;
         }
+
+        public static IServiceCollection AddServices(this IServiceCollection services) =>
+                  services.AddTransient<IDataSeeder, IdentityDataSeeder>()
+                          .AddTransient<IIdentityService, IdentityService>()
+                          .AddTransient<ITokenGeneratorService, TokenGeneratorService>();
     }
 }

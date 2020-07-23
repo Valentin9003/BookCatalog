@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using BookCatalog.Admin.Services.Authors.Models;
+using System;
 using System.Threading.Tasks;
 
 namespace BookCatalog.Admin.Services.Authors
 {
-    public class AuthorsService
+    public class AuthorsService : IAuthorsService
     {
+        public Task<bool> DeleteAuthor(string authorId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

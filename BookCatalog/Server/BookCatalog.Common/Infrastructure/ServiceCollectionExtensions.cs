@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Reflection;
 using System.Text;
+using AutoMapper;
+using BookCatalog.Common.Models;
 using BookCatalog.Common.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -89,5 +91,14 @@ namespace BookCatalog.Common.Infrastructure
 
             return services;
         }
+
+        public static IServiceCollection AddAutoMapperProfile(this IServiceCollection services, Assembly assembly)
+        => services
+            .AddAutoMapper(
+                (_, config) => config
+                    .AddProfile(new MappingProfile(assembly)),
+                Array.Empty<Assembly>());
+       
+
     }
 }
