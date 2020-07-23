@@ -21,6 +21,7 @@ namespace BookCatalog.Common.Infrastructure
         {
             services
                 .AddDatabase<TDbContext>(configuration)
+                .AddHealth(configuration)
                 .AddApplicationSettings(configuration)
                 .AddTokenAuthentication(configuration)
                 .AddControllers();
@@ -98,7 +99,20 @@ namespace BookCatalog.Common.Infrastructure
                 (_, config) => config
                     .AddProfile(new MappingProfile(assembly)),
                 Array.Empty<Assembly>());
-       
 
+        public static IServiceCollection AddHealth(
+           this IServiceCollection services,
+           IConfiguration configuration)
+        {
+            var healthChecks = services.AddHealthChecks();
+
+            healthChecks
+                .AddSqlServer(configuration.GetDefaultConnectionString());
+
+            healthChecks
+                .AddRabbitMQ(rabbitConnectionString: "amqp://rabbitmq:rabbitmq@rabbitmq/");
+
+            return services;
+        }
     }
 }
