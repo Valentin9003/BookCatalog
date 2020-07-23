@@ -46,9 +46,8 @@ namespace BookCatalog.Common.Infrastructure
             this IServiceCollection services,
             IConfiguration configuration)
             => services
-                .Configure<ApplicationSettings>(
-                    configuration.GetSection(nameof(ApplicationSettings)),
-                    config => config.BindNonPublicProperties = true);
+                .Configure<ApplicationSettings>(option =>
+                    configuration.GetSection(nameof(ApplicationSettings)).Bind(option));
 
         public static IServiceCollection AddTokenAuthentication(
            this IServiceCollection services,

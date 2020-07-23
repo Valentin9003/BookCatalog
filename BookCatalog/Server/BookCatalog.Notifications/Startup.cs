@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookCatalog.Notifications.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,10 +24,9 @@ namespace BookCatalog.Notifications
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddControllers();
-        }
+        public void ConfigureServices(IServiceCollection services) =>
+            services.AddSignalR(); 
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -35,17 +35,16 @@ namespace BookCatalog.Notifications
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseRouting()
+               .UseCors(options => options
+                   .WithOrigins() //TODO: "http://localhost:4200"
+                   .AllowAnyHeader()
+                   .AllowAnyMethod()
+                   .AllowCredentials())
+               //.UseAuthentication() TODO://
+               //.UseAuthorization()
+               .UseEndpoints(endpoints => endpoints
+               .MapHub<NotificationsHub>("/notifications"));
         }
     }
 }

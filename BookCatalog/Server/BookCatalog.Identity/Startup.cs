@@ -1,5 +1,3 @@
-
-
 using BookCatalog.Common.Infrastructure;
 using BookCatalog.Common.Services;
 using BookCatalog.Identity.Data;
