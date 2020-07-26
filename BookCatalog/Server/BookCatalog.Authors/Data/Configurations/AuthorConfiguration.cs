@@ -13,7 +13,8 @@ namespace BookCatalog.Authors.Data.Configurations
 
             builder.HasMany(b => b.Books)
                 .WithOne(a => a.Author)
-                .HasForeignKey(b => b.BookId);
+                .HasForeignKey(b => b.BookId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Property(p => p.FirstName)
                 .IsRequired();

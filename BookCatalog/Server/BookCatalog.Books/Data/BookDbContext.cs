@@ -1,10 +1,11 @@
 ﻿using BookCatalog.Books.Data.Models;
+using BookCatalog.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace BookCatalog.Books.Data
 {
-    public class BookDbContext: DbContext
+    public class BookDbContext: MessageDbContext
     {
         public BookDbContext(DbContextOptions<BookDbContext> options)
             :base(options)
@@ -16,11 +17,6 @@ namespace BookCatalog.Books.Data
 
         public DbSet<Genre> Genre { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-            base.OnModelCreating(modelBuilder);
-        }
+        protected override Assembly ConfigurationsAssembly => Assembly.GetExecutingAssembly();
     }
 }

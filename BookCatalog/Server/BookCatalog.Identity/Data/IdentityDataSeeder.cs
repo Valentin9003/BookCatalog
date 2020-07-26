@@ -36,12 +36,12 @@ namespace BookCatalog.Identity.Data
 
                     var adminUser = new User
                     {
-                        UserName = "admin@crs.com",
-                        Email = "admin@crs.com",
-                        SecurityStamp = "RandomSecurityStamp"
+                        UserName = "valio@abv.com",
+                        Email = "valio@abv.com",
+                        SecurityStamp = "Value"
                     };
 
-                    await userManager.CreateAsync(adminUser, "adminpass12");
+                    await userManager.CreateAsync(adminUser, "Password123456");
 
                     await userManager.AddToRoleAsync(adminUser, Constants.AdministratorRoleName);
                 })

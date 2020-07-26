@@ -1,4 +1,5 @@
 ﻿using BookCatalog.Authors.Data.Models;
+using BookCatalog.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BookCatalog.Authors.Data
 {
-    public class AuthorDbContext: DbContext
+    public class AuthorDbContext: MessageDbContext
     {
         public AuthorDbContext(DbContextOptions<AuthorDbContext> options)
             :base(options)
@@ -22,11 +23,6 @@ namespace BookCatalog.Authors.Data
 
         public DbSet<Book> Book { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-            base.OnModelCreating(modelBuilder);
-        }
+        protected override Assembly ConfigurationsAssembly => Assembly.GetExecutingAssembly();
     }
 }

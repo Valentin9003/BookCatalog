@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BookCatalog.Books.Data;
+using BookCatalog.Books.Infrastructure;
 using BookCatalog.Common.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,7 +26,8 @@ namespace BookCatalog.Books
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services) =>
-            services.AddWebService<BookDbContext>(this.Configuration);
+            services.AddWebService<BookDbContext>(this.Configuration)
+            .AddDomainServices();
 
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) =>

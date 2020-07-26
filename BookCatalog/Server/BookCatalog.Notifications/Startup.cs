@@ -23,12 +23,8 @@ namespace BookCatalog.Notifications
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) =>
-            services.AddSignalR(); 
-        
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            services.AddSignalR();
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -37,12 +33,12 @@ namespace BookCatalog.Notifications
             }
             app.UseRouting()
                .UseCors(options => options
-                   .WithOrigins() //TODO: "http://localhost:4200"
+                   .WithOrigins("http://localhost:4200")
                    .AllowAnyHeader()
                    .AllowAnyMethod()
                    .AllowCredentials())
-               //.UseAuthentication() TODO://
-               //.UseAuthorization()
+                 .UseAuthentication()
+                 .UseAuthorization()
                .UseEndpoints(endpoints => endpoints
                .MapHub<NotificationsHub>("/notifications"));
         }

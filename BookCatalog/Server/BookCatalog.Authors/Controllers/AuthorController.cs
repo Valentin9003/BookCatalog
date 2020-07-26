@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BookCatalog.Authors.Models;
-using BookCatalog.Authors.Services.Author;
+using BookCatalog.Authors.Services.Authors;
 using BookCatalog.Common.Controllers;
 using BookCatalog.Common.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -19,24 +16,54 @@ namespace BookCatalog.Authors.Controllers
             this.authorService = authorService;
             this.currentUser = currentUser;
         }
-        public async Task<ActionResult<AuthorOutputModel>> GetAuthor()
+        [HttpGet]
+        [Route("GetAuthor/{id}")]
+        public async Task<ActionResult<AuthorOutputModel>> GetAuthor(string id)
         {
-            return null;
+            var author = await authorService.GetAuthor(id);
+
+            if (author == null)
+            {
+                return NotFound();
+            }
+
+            return author;
         }
 
-        public async Task<ActionResult<AuthorOutputModel>> AddAuthor()
+        public async Task<ActionResult<AuthorOutputModel>> AddAuthor(AuthorInputModel author)
         {
-            return null;
+            var isSuccessed = await this.authorService.AddAuthor(author);
+
+            if (!isSuccessed)
+            {
+                return BadRequest();
+            }
+
+            return Ok();
         }
 
-        public async Task<ActionResult<AuthorOutputModel>> UpdateAuthor()
+        public async Task<ActionResult<AuthorOutputModel>> UpdateAuthor(AuthorInputModel author)
         {
-            return null;
+            var isSuccessed = await this.authorService.UpdateAuthor(author);
+
+            if (!isSuccessed)
+            {
+                return NotFound();
+            }
+
+            return Ok();
         }
 
-        public async Task<ActionResult<bool>> DeleteAuthor()
+        public async Task<ActionResult<bool>> DeleteAuthor(string authorId)
         {
-            return null;
+            var isSuccessed = await this.authorService.DeleteAuthor(authorId);
+
+            if (!isSuccessed)
+            {
+                return NotFound();
+            }
+
+            return Ok();
         }
     }
 }

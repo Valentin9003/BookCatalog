@@ -20,9 +20,7 @@ namespace BookCatalog.Identity
             => services
                 .AddWebService<IdentityDbContext>(this.Configuration)
                 .AddUserStorage()
-                .AddTransient<IDataSeeder, IdentityDataSeeder>()
-                .AddTransient<IIdentityService, IdentityService>()
-                .AddTransient<ITokenGeneratorService, TokenGeneratorService>();
+                .AddServices();
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
             => app

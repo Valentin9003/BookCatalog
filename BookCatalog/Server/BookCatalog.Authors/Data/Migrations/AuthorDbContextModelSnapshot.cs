@@ -64,6 +64,29 @@ namespace BookCatalog.Authors.Data.Migrations
                     b.ToTable("Book");
                 });
 
+            modelBuilder.Entity("BookCatalog.Common.Models.Message", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Published")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("serializedData")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Messages");
+                });
+
             modelBuilder.Entity("BookCatalog.Authors.Data.Models.Book", b =>
                 {
                     b.HasOne("BookCatalog.Authors.Data.Models.Author", "Author")
