@@ -1,11 +1,15 @@
-﻿using BookCatalog.Books.Services;
+﻿using BookCatalog.Books.Data;
+using BookCatalog.Books.Services;
+using BookCatalog.Common.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BookCatalog.Books.Infrastructure
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddServices(this IServiceCollection services) =>
-                   services.AddTransient<IBookService, BookService>();
+        public static IServiceCollection AddDomainServices(this IServiceCollection services) =>
+                   services.AddTransient<IDataSeeder, BookDbSeeder>()
+                           .AddTransient<IBookService, BookService>();
+                          
     }
 }

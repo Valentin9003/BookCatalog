@@ -18,7 +18,7 @@ namespace BookCatalog.Admin
 
         public void ConfigureServices(IServiceCollection services) =>
                services
-                       .AddServices()
+                       .AddDomainServices()
                        .AddApplicationSettings(this.Configuration)
                        .AddTokenAuthentication(this.Configuration)
                        .AddControllers();

@@ -4,7 +4,7 @@ using BookCatalog.Common.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace BookCatalog.Admin.Controllers
+namespace BookCatalog.Admin.Controllers.Books
 {
     public class BooksController : ApiController
     {

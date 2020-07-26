@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using BookCatalog.Authors.Models;
-using BookCatalog.Authors.Services.Author;
+using BookCatalog.Authors.Services.Authors;
 using BookCatalog.Common.Controllers;
 using BookCatalog.Common.Services;
 using Microsoft.AspNetCore.Mvc;

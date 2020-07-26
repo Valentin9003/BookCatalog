@@ -19,5 +19,9 @@
     <ProjectReference Include="..\BookCatalog.Gateway\BookCatalog.Gateway.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Models\" />
+  </ItemGroup>
+
 
 </Project>

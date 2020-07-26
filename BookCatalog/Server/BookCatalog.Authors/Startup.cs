@@ -27,7 +27,8 @@ namespace BookBlog.Authors
 
         public void ConfigureServices(IServiceCollection services) =>
             services.AddWebService<AuthorDbContext>(this.Configuration)
-            .AddServices();
+            .AddDomainServices()
+            .AddMessaging(this.Configuration);
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) =>
             app.UseWebService(env)

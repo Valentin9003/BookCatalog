@@ -27,7 +27,7 @@ namespace BookCatalog.Books
 
         public void ConfigureServices(IServiceCollection services) =>
             services.AddWebService<BookDbContext>(this.Configuration)
-            .AddServices();
+            .AddDomainServices();
 
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env) =>

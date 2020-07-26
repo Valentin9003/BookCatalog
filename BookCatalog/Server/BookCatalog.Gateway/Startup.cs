@@ -26,6 +26,7 @@ namespace BookCatalog.Gateway
             var serviceEndpoints = this.Configuration
                .GetSection(nameof(ServiceEndpoints))
                .Get<ServiceEndpoints>(config => config.BindNonPublicProperties = true);
+
             services
                 .AddAutoMapperProfile(Assembly.GetExecutingAssembly())
                 .AddTokenAuthentication(this.Configuration)

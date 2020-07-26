@@ -1,12 +1,14 @@
-﻿using BookCatalog.Authors.Models;
+﻿using BookCatalog.Authors.Data.Models;
+using BookCatalog.Authors.Models;
+using BookCatalog.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace BookCatalog.Authors.Services.Author
+namespace BookCatalog.Authors.Services.Authors
 {
-    public interface IAuthorService
+    public interface IAuthorService : IDataService<Author>
     {
         Task<AuthorOutputModel> GetAuthor(string id);
 

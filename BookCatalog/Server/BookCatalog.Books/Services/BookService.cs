@@ -4,6 +4,7 @@ using BookCatalog.Books.Data.Models;
 using BookCatalog.Books.Models;
 using BookCatalog.Books.Services.Models;
 using BookCatalog.Common.Services;
+using BookCatalog.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
@@ -15,10 +16,11 @@ using static BookCatalog.Books.BookConstants;
 
 namespace BookCatalog.Books.Services
 {
-    public class BookService : IBookService
+    public class BookService : DataService<Book>, IBookService
     {
         private readonly BookDbContext db;
         public BookService(BookDbContext db)
+            : base(db)
         {
             this.db = db;
         }

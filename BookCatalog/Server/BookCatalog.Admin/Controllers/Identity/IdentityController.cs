@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using AutoMapper;
+using BookCatalog.Admin.Services.Identity;
 using BookCatalog.Common.Controllers;
-using BookCatalog.Identity.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,7 +31,7 @@ namespace BookCatalog.Admin.Controllers.Identity
         public IActionResult Logout()
         {
 
-            return null; // RedirectToAction(nameof(HomeController.Index), "Home");
+            return null;
         }
     }
 }

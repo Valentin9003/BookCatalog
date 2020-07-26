@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace BookCatalog.Admin.Controllers.Authors
 {
-    // TODO:
     public class AuthorsController : ApiController
     {
         private readonly IAuthorsService authorService;

@@ -1,4 +1,5 @@
-﻿using BookCatalog.Books.Models;
+﻿using BookCatalog.Books.Data.Models;
+using BookCatalog.Books.Models;
 using BookCatalog.Books.Services.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BookCatalog.Books.Services
 {
-    public interface IBookService
+    public interface IBookService : IDataService<Book>
     {
         Task<BookOutputModel> GetBook(string id);
 

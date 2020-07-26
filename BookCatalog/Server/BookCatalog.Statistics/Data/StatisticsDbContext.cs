@@ -1,4 +1,5 @@
-﻿using BookCatalog.Statistics.Data.Models;
+﻿using BookCatalog.Data;
+using BookCatalog.Statistics.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BookCatalog.Statistics.Data
 {
-    public class StatisticsDbContext : DbContext
+    public class StatisticsDbContext : MessageDbContext
     {
         public StatisticsDbContext(DbContextOptions<StatisticsDbContext> options)
             : base(options)
@@ -18,11 +19,6 @@ namespace BookCatalog.Statistics.Data
 
        public DbSet<Statistic> Statistics { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-            base.OnModelCreating(modelBuilder);
-        }
+        protected override Assembly ConfigurationsAssembly => Assembly.GetExecutingAssembly();
     }
 }

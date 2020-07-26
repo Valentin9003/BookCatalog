@@ -1,8 +1,9 @@
 ﻿using BookCatalog.Authors.Data;
 using BookCatalog.Authors.Data.Models;
 using BookCatalog.Authors.Models;
-using BookCatalog.Authors.Services.Author;
+using BookCatalog.Authors.Services.Authors;
 using BookCatalog.Common.Services;
+using BookCatalog.Services;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Data.Common;
@@ -11,11 +12,12 @@ using System.Threading.Tasks;
 
 namespace BookCatalog.Authors
 {
-    public class AuthorService : IAuthorService
+    public class AuthorService : DataService<Author>, IAuthorService
     {
         private readonly AuthorDbContext db;
         private readonly ICurrentUserService userService;
         public AuthorService(AuthorDbContext db, ICurrentUserService userService)
+            : base(db)
         {
             this.db = db;
             this.userService = userService;
