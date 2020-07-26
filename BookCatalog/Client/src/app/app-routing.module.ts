@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [ 
 {
   path: 'identity',
-  loadChildren: () => import('./identity/identity.routing.module').then(m => m.IdentityRoutingModule)
+  loadChildren: () => import('./authentication/authentication-routing.module').then(m => m.AuthenticationRoutingModule)
 },
 {
   path: 'books',
@@ -17,7 +17,7 @@ const routes: Routes = [
 },
 {
   path: '',
-  loadChildren: () => import('./shared/shared.routing.module').then(m => m.SharedRoutingModule)
+  loadChildren: () => import('./shared/shared-routing.module').then(m => m.SharedRoutingModule)
 },
 ];
 

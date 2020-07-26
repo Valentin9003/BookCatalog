@@ -5,19 +5,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BooksModule } from './books/books.module';
 import { AuthorsModule } from './authors/authors.module';
-import { SharedModule } from './shared/common.module';
-import { IdentityModule } from './identity/identity.module';
+import { SharedModule } from './shared/shared.module';
+import { AuthenticationModule } from './authentication/authentication.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TokenInterceptor } from './shared/token-interceptor';
-import { ErrorInterceptor } from './shared/error-interceptor';
+import { InterceptorService } from './shared/interceptor.service';
+import { ErrorInterceptorService } from './shared/error-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ import { ToastrModule } from 'ngx-toastr';
     BooksModule,
     AuthorsModule,
     SharedModule,
-    IdentityModule,
+    AuthenticationModule,
     HttpClientModule,
     RouterModule,
     CommonModule,
@@ -35,12 +37,12 @@ import { ToastrModule } from 'ngx-toastr';
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
+      useClass: InterceptorService,
       multi: true
        },
        {
         provide: HTTP_INTERCEPTORS,
-        useClass: ErrorInterceptor,
+        useClass: ErrorInterceptorService,
         multi: true
        }
   ],
