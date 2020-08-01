@@ -7,7 +7,7 @@ namespace BookCatalog.Books.Data
 {
     public class BookDbSeeder : IDataSeeder
     {
-        private static List<Book> Data = new List<Book>()
+        private static readonly List<Book> Data = new List<Book>()
         {
         new Book
         {
@@ -24,6 +24,7 @@ namespace BookCatalog.Books.Data
             Summary = "Summary1"
         }
         };
+
         private readonly BookDbContext db;
 
         public BookDbSeeder(BookDbContext db) => this.db = db;

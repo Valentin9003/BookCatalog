@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.login(this.loginForm.value).subscribe(res => {
       this.authenticationService.setToken(res['token']);
 
-      this.authenticationService.getDealerId().subscribe(res => {
+      this.authenticationService.getAuthorId().subscribe(res => {
         this.authenticationService.setId(res);
 
         this.router.navigate(['']).then(() => {

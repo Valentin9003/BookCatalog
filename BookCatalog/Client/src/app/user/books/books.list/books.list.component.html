@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3" *ngFor="let book of books">
+            <div class="card" style="width: 18rem;">
+                <img [src]="book.imageUrl" class="card-img-top" alt="book picture">
+                <div class="card-body">
+                    <h5 class="card-title">{{book.id}}</h5>
+                    <h5 class="card-title">{{book.Title}}</h5>
+                    <h5 class="card-title">{{book.Summary}}</h5>
+                    <h5 class="card-title">{{book.NumberOfPages}}</h5>
+                    <h5 class="card-title">{{book.Genre}}</h5>
+
+                  <p class="card-text"></p>
+                  <a routerLink="/mybooks/{{book.id}}" class="btn btn-primary">See book info</a>
+                  <button class="btn btn-warning" (click)="editCat(book.id)"> Edit</button>
+                  <button class="btn btn-danger" (click)="deleteCat(book.id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,7 +7,8 @@ export const environment = {
   booksApiUrl: "https://localhost:5004/",
   identityApiUrl: "",
   authorsApiUrl: "",
-  userApiPath: "https://localhost:5017"
+  userApiPath: "https://localhost:5017",
+  statisticsApiUrl: 
 };
 
 /*

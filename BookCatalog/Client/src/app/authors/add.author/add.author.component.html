@@ -1,1 +1,32 @@
-<p>add.author works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <form [formGroup]="registerForm" (ngSubmit)="addAuthor()">
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Username</label>
+                  <input type="text" class="form-control" formControlName="username">
+                </div>
+                <div class="alert alert-danger" *ngIf="firstName.touched && firstName.errors?.required">
+                    This field "First Name" is required!
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Email</label>
+                    <input type="text" class="form-control" formControlName="LastName">
+                  </div>
+                  <div class="alert alert-danger" *ngIf="lastName.touched && lastName.errors?.required">
+                      This field "Last Name" is required!
+                  </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Biography:</label>
+                  <input type="text" class="form-control" formControlName="biography">
+                </div>
+                <div class="alert alert-danger" *ngIf="biography.touched && biography.errors?.required">
+                    This field "Biography" is required!
+                </div>
+                <button type="submit" class="btn btn-primary">Add Author</button>
+              </form>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>

@@ -21,8 +21,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookCatalog.HealthCheck", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookCatalog.Authors", "BookCatalog.Authors\BookCatalog.Authors.csproj", "{0A81BBB0-C788-4A5E-B016-8FD65566F65E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookCatalog.User", "BookCatalog.User\BookCatalog.User.csproj", "{A4263A6F-A42F-47B3-9D98-139E94A97327}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,10 +63,6 @@ Global
 		{0A81BBB0-C788-4A5E-B016-8FD65566F65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A81BBB0-C788-4A5E-B016-8FD65566F65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A81BBB0-C788-4A5E-B016-8FD65566F65E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A4263A6F-A42F-47B3-9D98-139E94A97327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A4263A6F-A42F-47B3-9D98-139E94A97327}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A4263A6F-A42F-47B3-9D98-139E94A97327}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A4263A6F-A42F-47B3-9D98-139E94A97327}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
