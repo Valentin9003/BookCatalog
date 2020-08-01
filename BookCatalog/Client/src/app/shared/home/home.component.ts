@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StatisticsService } from '../statistics/statistics.service';
 import { Statistics } from '../statistics/statistics.model';
-import { BookService } from 'src/app/books/services/book.service';
-import { Book } from 'src/app/books/BookModel';
+import { BookService } from 'src/app/books/book.service';
+import { Book } from 'src/app/books/models/BookModel';
 
 @Component({
   selector: 'app-home',

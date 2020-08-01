@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Book } from '../BookModel';
+import { Book } from '../models/BookModel';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,8 +14,8 @@ export class BookService {
 
   constructor(private http: HttpClient) { }
 
-  getBooks(payload: any): Observable<Array<Book>> {
-    return this.http.get<Array<Book>>(this.booksPath + payload); //TODO: Pagination
+  getBooks(page: number): Observable<Array<Book>> {
+    return this.http.get<Array<Book>>(this.booksPath + `/${page}`); //TODO: Pagination
   }
 
   getBooksByAuthor(authorId: string, payload: any): Observable<Array<Book>> {
