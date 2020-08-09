@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookModel } from '../models/book.model';
 import { Observable, Observer } from 'rxjs';
-import { UserService } from '../../Services/user.service';
+import { MineService } from '../../Services/mine.service';
 
 @Component({
   selector: 'app-books-list',
@@ -11,7 +11,7 @@ import { UserService } from '../../Services/user.service';
 export class BooksListComponent implements OnInit {
 
   public books: BookModel[];
-  constructor(private userService: UserService) { }
+  constructor(private userService: MineService) { }
 
   ngOnInit(): void {
     this.userService.getBooks(10).subscribe((data: BookModel[]) => { // TODO: PAGINATION

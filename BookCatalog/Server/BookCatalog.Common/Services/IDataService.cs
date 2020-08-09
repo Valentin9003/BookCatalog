@@ -8,6 +8,6 @@ namespace BookCatalog.Common.Services
     {
         Task MarkMessageAsPublished(int id);
 
-        Task Save(TEntity entity, params Message[] messages);/
+        Task Save(TEntity entity, params Message[] messages);
     }
 }
