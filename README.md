@@ -1,2 +1,2 @@
 # Blog
-Simple Book Blog with Microservices Architecture
+Book Blog with Microservices Architecture, Angular Frontend and Docker
