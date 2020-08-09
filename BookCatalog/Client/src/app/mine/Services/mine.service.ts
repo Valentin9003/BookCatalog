@@ -7,7 +7,7 @@ import { BookModel } from '../books/models/book.model';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class MineService {
 
   userApiPath: string = environment.userApiPath;
 
